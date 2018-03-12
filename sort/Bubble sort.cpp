@@ -16,7 +16,7 @@ void bubble_sort(vector<int> &array) {
 				signal = false;
 			}
 		}
-		if (signal == true) { return; }
+		if (signal == true) { return; } //不发生交换说明排序已经完成
 	}
 }
 
