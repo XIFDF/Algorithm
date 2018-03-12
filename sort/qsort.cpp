@@ -1,3 +1,4 @@
+/*å¿«é€Ÿæ’åº*/
 #include <iostream>
 #include <vector>
 
@@ -17,9 +18,9 @@ void Qsort(vector<int> &array, int begin, int end) {
 		}
 		array[last] = array[first];
 	}
-	array[first] = key;				//´ËÊ±firstÒÑ¾­¸Ä±ä, ±êÊ¶µ½Î»
+	array[first] = key;				//æ­¤æ—¶firstå·²ç»æ”¹å˜, æ ‡è¯†åˆ°ä½
 	Qsort(array, begin, first - 1);
-	Qsort(array, last + 1, end);	//¼õÒ»¼ÓÒ»²Ù×÷ÊÇÎªÁË²»²Ù×÷ÒÑµ½Î»µÄ±êÊ¶
+	Qsort(array, last + 1, end);	//å‡ä¸€åŠ ä¸€æ“ä½œæ˜¯ä¸ºäº†ä¸æ“ä½œå·²åˆ°ä½çš„æ ‡è¯†
 }
 
 int main(){
