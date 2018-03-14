@@ -1,3 +1,6 @@
+/*********************************
+ **å¸Œå°”æ’åº  æ—¶é—´å¤æ‚åº¦ï¼šO(nlog2 n)**
+ *********************************/
 #include <iostream>
 #include <vector>
 
@@ -7,12 +10,12 @@ void shell_sort(vector<int> &array) {
 	int size = array.size();
 	if (size <= 1)
 		return;
-	for (int div = size / 2; div >= 1; div = div / 2){	//¶¨ÔöÁ¿div£¬²¢²»¶Ï¼õĞ¡
-		for (int i = 0; i <= div; ++i){					//·Ö×é³Édiv×é
-			for (int j = i; j < size - div; j += div)	//¶ÔÃ¿×é½øĞĞ²åÈëÅÅĞò
+	for (int div = size / 2; div >= 1; div = div / 2){	//å®šå¢é‡divï¼Œå¹¶ä¸æ–­å‡å°
+		for (int i = 0; i <= div; ++i){					//åˆ†ç»„æˆdivç»„
+			for (int j = i; j < size - div; j += div)	//å¯¹æ¯ç»„è¿›è¡Œæ’å…¥æ’åº
 				for (int k = j; k < size; k += div)
 					if (array[j] > array[k])
-						swap(array[j], array[k]);		//½»»»Á½¸öÊıµÄÖµ
+						swap(array[j], array[k]);		//äº¤æ¢ä¸¤ä¸ªæ•°çš„å€¼
 		}
 	}
 }
