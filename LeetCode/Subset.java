@@ -1,3 +1,18 @@
+/*ç»™å®šä¸€ä¸ªå«ä¸åŒæ•´æ•°çš„é›†åˆï¼Œè¿”å›å…¶æ‰€æœ‰çš„è‡ªå·±*/
+/*å­é›†ä¸­çš„å…ƒç´ æ’åºå¿…é¡»æ˜¯éé™åºçš„ï¼Œè§£é›†å¿…é¡»ä¸åŒ…å«é‡å¤çš„å­é›†*/
+/*
+å¦‚æœ S = [1,2,3]ï¼Œæœ‰å¦‚ä¸‹çš„è§£
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]
+*/
 public class Solution {
     /**
      * @param nums: A set of numbers
@@ -5,20 +20,20 @@ public class Solution {
      */
     public List<List<Integer>> subsets(int[] nums) {
         // write your code here
-        Arrays.sort(nums);
+        Arrays.sort(nums);//æ’åºä¿è¯éé™åº
         List<List<Integer>> result = new ArrayList<>();
         if (nums.length > 0) {
-    		for (int i = 0; i < Math.pow(2, nums.length); i++) {// ¼¯ºÏ×Ó¼¯¸öÊı=2µÄ¸Ã¼¯ºÏ³¤¶ÈµÄ³Ë·½
+    		for (int i = 0; i < Math.pow(2, nums.length); i++) {// é›†åˆå­é›†ä¸ªæ•°=2çš„è¯¥é›†åˆé•¿åº¦çš„ä¹˜æ–¹
 				ArrayList<Integer> subSet = new ArrayList<Integer>();
-				int index = i;// Ë÷Òı´Ó0Ò»Ö±µ½2µÄ¼¯ºÏ³¤¶ÈµÄ³Ë·½-1
+				int index = i;// ç´¢å¼•ä»0ä¸€ç›´åˆ°2çš„é›†åˆé•¿åº¦çš„ä¹˜æ–¹-1
 				for (int j = 0; j < nums.length; j++) {
-					// Í¨¹ıÖğÒ»Î»ÒÆ£¬ÅĞ¶ÏË÷ÒıÄÇÒ»Î»ÊÇ1£¬Èç¹ûÊÇ£¬ÔÙÌí¼Ó´ËÏî
-					if ((index & 1) == 1) {// Î»ÓëÔËËã£¬ÅĞ¶Ï×îºóÒ»Î»ÊÇ·ñÎª1
+					// é€šè¿‡é€ä¸€ä½ç§»ï¼Œåˆ¤æ–­ç´¢å¼•é‚£ä¸€ä½æ˜¯1ï¼Œå¦‚æœæ˜¯ï¼Œå†æ·»åŠ æ­¤é¡¹
+					if ((index & 1) == 1) {// ä½ä¸è¿ç®—ï¼Œåˆ¤æ–­æœ€åä¸€ä½æ˜¯å¦ä¸º1
 						subSet.add(nums[j]);
 					}
-					index >>= 1;// Ë÷ÒıÓÒÒÆÒ»Î»
+					index >>= 1;// ç´¢å¼•å³ç§»ä¸€ä½
 				}
-				result.add(subSet); // °Ñ×Ó¼¯´æ´¢ÆğÀ´
+				result.add(subSet); // æŠŠå­é›†å­˜å‚¨èµ·æ¥
 			}
 			return result;
 		} else {
