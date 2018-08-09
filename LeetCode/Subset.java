@@ -23,7 +23,7 @@ public class Solution {
         Arrays.sort(nums);//排序保证非降序
         List<List<Integer>> result = new ArrayList<>();
         if (nums.length > 0) {
-    		for (int i = 0; i < Math.pow(2, nums.length); i++) {// 集合子集个数=2的该集合长度的乘方
+    		for (int i = 0; i < Math.pow(2, nums.length); i++) {// 集合子集个数为 2的该集合长度的乘方
 				ArrayList<Integer> subSet = new ArrayList<Integer>();
 				int index = i;// 索引从0一直到2的集合长度的乘方-1
 				for (int j = 0; j < nums.length; j++) {
